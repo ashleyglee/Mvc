@@ -1270,6 +1270,10 @@ namespace Microsoft.AspNetCore.Mvc
         /// Creates a <see cref="ChallengeResult"/>.
         /// </summary>
         /// <returns>The created <see cref="ChallengeResult"/> for the response.</returns>
+        /// <remarks>
+        /// The behavior of this method depends on the <see cref="AuthenticationManager"/> in use.
+        /// <see cref="StatusCodes.Status401Unauthorized"/> and <see cref="StatusCodes.Status403Forbidden"/> are among likely status results.
+        /// </remarks>
         [NonAction]
         public virtual ChallengeResult Challenge()
             => new ChallengeResult();
@@ -1279,6 +1283,10 @@ namespace Microsoft.AspNetCore.Mvc
         /// </summary>
         /// <param name="authenticationSchemes">The authentication schemes to challenge.</param>
         /// <returns>The created <see cref="ChallengeResult"/> for the response.</returns>
+        /// <remarks>
+        /// The behavior of this method depends on the <see cref="AuthenticationManager"/> in use.
+        /// <see cref="StatusCodes.Status401Unauthorized"/> and <see cref="StatusCodes.Status403Forbidden"/> are among likely status results.
+        /// </remarks>
         [NonAction]
         public virtual ChallengeResult Challenge(params string[] authenticationSchemes)
             => new ChallengeResult(authenticationSchemes);
@@ -1289,6 +1297,10 @@ namespace Microsoft.AspNetCore.Mvc
         /// <param name="properties"><see cref="AuthenticationProperties"/> used to perform the authentication
         /// challenge.</param>
         /// <returns>The created <see cref="ChallengeResult"/> for the response.</returns>
+        /// <remarks>
+        /// The behavior of this method depends on the <see cref="AuthenticationManager"/> in use.
+        /// <see cref="StatusCodes.Status401Unauthorized"/> and <see cref="StatusCodes.Status403Forbidden"/> are among likely status results.
+        /// </remarks>
         [NonAction]
         public virtual ChallengeResult Challenge(AuthenticationProperties properties)
             => new ChallengeResult(properties);
@@ -1301,6 +1313,10 @@ namespace Microsoft.AspNetCore.Mvc
         /// challenge.</param>
         /// <param name="authenticationSchemes">The authentication schemes to challenge.</param>
         /// <returns>The created <see cref="ChallengeResult"/> for the response.</returns>
+        /// <remarks>
+        /// The behavior of this method depends on the <see cref="AuthenticationManager"/> in use.
+        /// <see cref="StatusCodes.Status401Unauthorized"/> and <see cref="StatusCodes.Status403Forbidden"/> are among likely status results.
+        /// </remarks>
         [NonAction]
         public virtual ChallengeResult Challenge(
             AuthenticationProperties properties,
