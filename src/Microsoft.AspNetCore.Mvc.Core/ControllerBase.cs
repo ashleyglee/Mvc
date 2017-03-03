@@ -1308,40 +1308,56 @@ namespace Microsoft.AspNetCore.Mvc
             => new ChallengeResult(authenticationSchemes, properties);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>).
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/> by default).
         /// </summary>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
+        /// <remarks>
+        /// Some authentication schemes, such as cookies, will convert <see cref="StatusCodes.Status403Forbidden"/> to a
+        /// redirect to show a login page.
+        /// </remarks>
         [NonAction]
         public virtual ForbidResult Forbid()
             => new ForbidResult();
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified authentication schemes.
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/> by default) with the specified authentication schemes.
         /// </summary>
         /// <param name="authenticationSchemes">The authentication schemes to challenge.</param>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
+        /// <remarks>
+        /// Some authentication schemes, such as cookies, will convert <see cref="StatusCodes.Status403Forbidden"/> to a
+        /// redirect to show a login page.
+        /// </remarks>
         [NonAction]
         public virtual ForbidResult Forbid(params string[] authenticationSchemes)
             => new ForbidResult(authenticationSchemes);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified <paramref name="properties" />.
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/> by default) with the specified <paramref name="properties" />.
         /// </summary>
         /// <param name="properties"><see cref="AuthenticationProperties"/> used to perform the authentication
         /// challenge.</param>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
+        /// <remarks>
+        /// Some authentication schemes, such as cookies, will convert <see cref="StatusCodes.Status403Forbidden"/> to a
+        /// redirect to show a login page.
+        /// </remarks>
         [NonAction]
         public virtual ForbidResult Forbid(AuthenticationProperties properties)
             => new ForbidResult(properties);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified specified
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/> by default) with the specified specified
         /// authentication schemes and <paramref name="properties" />.
         /// </summary>
         /// <param name="properties"><see cref="AuthenticationProperties"/> used to perform the authentication
         /// challenge.</param>
         /// <param name="authenticationSchemes">The authentication schemes to challenge.</param>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
+        /// <remarks>
+        /// Some authentication schemes, such as cookies, will convert <see cref="StatusCodes.Status403Forbidden"/> to a
+        /// redirect to show a login page.
+        /// </remarks>
         [NonAction]
         public virtual ForbidResult Forbid(AuthenticationProperties properties, params string[] authenticationSchemes)
             => new ForbidResult(authenticationSchemes, properties);
