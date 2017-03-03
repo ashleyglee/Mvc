@@ -258,7 +258,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="ContentResult"/> object (HTTP 200) by specifying a <paramref name="content"/> string.
+        /// Creates a <see cref="ContentResult"/> object with <see cref="StatusCodes.Status200OK"/> by specifying a <paramref name="content"/> string.
         /// </summary>
         /// <param name="content">The content to write to the response.</param>
         /// <returns>The created <see cref="ContentResult"/> object for the response.</returns>
@@ -269,7 +269,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="ContentResult"/> object (HTTP 200) by specifying a <paramref name="content"/> string
+        /// Creates a <see cref="ContentResult"/> object with <see cref="StatusCodes.Status200OK"/> by specifying a <paramref name="content"/> string
         /// and a content type.
         /// </summary>
         /// <param name="content">The content to write to the response.</param>
@@ -282,7 +282,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="ContentResult"/> object (HTTP 200) by specifying a <paramref name="content"/> string,
+        /// Creates a <see cref="ContentResult"/> object with <see cref="StatusCodes.Status200OK"/> by specifying a <paramref name="content"/> string,
         /// a <paramref name="contentType"/>, and <paramref name="contentEncoding"/>.
         /// </summary>
         /// <param name="content">The content to write to the response.</param>
@@ -302,7 +302,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="ContentResult"/> object (HTTP 200) by specifying a <paramref name="content"/>
+        /// Creates a <see cref="ContentResult"/> object with <see cref="StatusCodes.Status200OK"/> by specifying a <paramref name="content"/>
         /// string and a <paramref name="contentType"/>.
         /// </summary>
         /// <param name="content">The content to write to the response.</param>
@@ -321,17 +321,17 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="NoContentResult"/> object that produces an empty No Content (204) response.
+        /// Creates a <see cref="NoContentResult"/> object that produces an empty <see cref="StatusCodes.Status204NoContent"/> response.   
         /// </summary>
         /// <returns>The created <see cref="NoContentResult"/> object for the response.</returns>
         [NonAction]
         public virtual NoContentResult NoContent()
-        {
+        {                                                                                                                              
             return new NoContentResult();
         }
 
         /// <summary>
-        /// Creates a <see cref="OkResult"/> object that produces an empty OK (200) response.
+        /// Creates a <see cref="OkResult"/> object that produces an empty <see cref="StatusCodes.Status200OK"/> response.
         /// </summary>
         /// <returns>The created <see cref="OkResult"/> for the response.</returns>
         [NonAction]
@@ -341,7 +341,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="OkObjectResult"/> object that produces an OK (200) response.
+        /// Creates an <see cref="OkObjectResult"/> object that produces an <see cref="StatusCodes.Status200OK"/> response.
         /// </summary>
         /// <param name="value">The content value to format in the entity body.</param>
         /// <returns>The created <see cref="OkObjectResult"/> for the response.</returns>
@@ -352,7 +352,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="RedirectResult"/> object that redirects (HTTP 302) to the specified <paramref name="url"/>.
+        /// Creates a <see cref="RedirectResult"/> object that redirects (<see cref="StatusCodes.Status302Found"/>)
+        /// to the specified <paramref name="url"/>.
         /// </summary>
         /// <param name="url">The URL to redirect to.</param>
         /// <returns>The created <see cref="RedirectResult"/> for the response.</returns>
@@ -368,8 +369,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="RedirectResult"/> object with <see cref="RedirectResult.Permanent"/> set to true (setting HTTP 301)
-        /// using the specified <paramref name="url"/>.
+        /// Creates a <see cref="RedirectResult"/> object with <see cref="RedirectResult.Permanent"/> set to true
+        /// (<see cref="StatusCodes.Status301MovedPermanently"/>) using the specified <paramref name="url"/>.
         /// </summary>
         /// <param name="url">The URL to redirect to.</param>
         /// <returns>The created <see cref="RedirectResult"/> for the response.</returns>
@@ -385,7 +386,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="LocalRedirectResult"/> object that redirects (HTTP 302) to
+        /// Creates a <see cref="LocalRedirectResult"/> object that redirects (<see cref="StatusCodes.Status302Found"/>) to
         /// the specified local <paramref name="localUrl"/>.
         /// </summary>
         /// <param name="localUrl">The local URL to redirect to.</param>
@@ -403,7 +404,7 @@ namespace Microsoft.AspNetCore.Mvc
 
         /// <summary>
         /// Creates a <see cref="LocalRedirectResult"/> object with <see cref="LocalRedirectResult.Permanent"/>
-        /// set to true (HTTP 301) using the specified <paramref name="localUrl"/>.
+        /// set to true (<see cref="StatusCodes.Status301MovedPermanently"/>) using the specified <paramref name="localUrl"/>.
         /// </summary>
         /// <param name="localUrl">The local URL to redirect to.</param>
         /// <returns>The created <see cref="LocalRedirectResult"/> for the response.</returns>
@@ -419,7 +420,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the <paramref name="actionName"/>.
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the <paramref name="actionName"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <returns>The created <see cref="RedirectToActionResult"/> for the response.</returns>
@@ -430,7 +431,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the <paramref name="actionName"/>
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the <paramref name="actionName"/>
         /// and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
@@ -443,7 +444,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the <paramref name="actionName"/>
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the <paramref name="actionName"/>
         /// and the <paramref name="controllerName"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
@@ -456,7 +457,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the specified <paramref name="actionName"/>,
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the specified <paramref name="actionName"/>,
         /// <paramref name="controllerName"/>, and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
@@ -473,7 +474,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the specified <paramref name="actionName"/>,
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the specified <paramref name="actionName"/>,
         /// <paramref name="controllerName"/>, and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
@@ -490,7 +491,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified action using the specified <paramref name="actionName"/>,
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified action using the specified <paramref name="actionName"/>,
         /// <paramref name="controllerName"/>, <paramref name="routeValues"/>,
         /// and <paramref name="fragment"/>.
         /// </summary>
@@ -513,8 +514,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <returns>The created <see cref="RedirectToActionResult"/> for the response.</returns>
@@ -525,8 +526,9 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/> and <paramref name="routeValues"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/> 
+        /// and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <param name="routeValues">The parameters for a route.</param>
@@ -538,8 +540,9 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/> and <paramref name="controllerName"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/> 
+        /// and <paramref name="controllerName"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <param name="controllerName">The name of the controller.</param>
@@ -551,8 +554,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/>,
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/>,
         /// <paramref name="controllerName"/>, and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
@@ -569,9 +572,9 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/>, <paramref name="controllerName"/>,
-        /// and <paramref name="routeValues"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/>,
+        /// <paramref name="controllerName"/>, and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <param name="controllerName">The name of the controller.</param>
@@ -587,9 +590,9 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified action with <see cref="RedirectToActionResult.Permanent"/> set to true
-        /// using the specified <paramref name="actionName"/>, <paramref name="controllerName"/>,
-        /// <paramref name="routeValues"/>, and <paramref name="fragment"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified action with 
+        /// <see cref="RedirectToActionResult.Permanent"/> set to true using the specified <paramref name="actionName"/>,
+        /// <paramref name="controllerName"/>, <paramref name="routeValues"/>, and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="actionName">The name of the action.</param>
         /// <param name="controllerName">The name of the controller.</param>
@@ -615,7 +618,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified route using the specified <paramref name="routeName"/>.
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified route using the specified <paramref name="routeName"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
         /// <returns>The created <see cref="RedirectToRouteResult"/> for the response.</returns>
@@ -626,7 +629,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified route using the specified <paramref name="routeValues"/>.
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified route using the specified <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="routeValues">The parameters for a route.</param>
         /// <returns>The created <see cref="RedirectToRouteResult"/> for the response.</returns>
@@ -637,7 +640,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified route using the specified <paramref name="routeName"/>
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified route using the specified <paramref name="routeName"/>
         /// and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
@@ -650,7 +653,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified route using the specified <paramref name="routeName"/>
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified route using the specified <paramref name="routeName"/>
         /// and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
@@ -663,7 +666,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 302) to the specified route using the specified <paramref name="routeName"/>,
+        /// Redirects (<see cref="StatusCodes.Status302Found"/>) to the specified route using the specified <paramref name="routeName"/>,
         /// <paramref name="routeValues"/>, and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
@@ -683,8 +686,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified route with <see cref="RedirectToRouteResult.Permanent"/> set to true
-        /// using the specified <paramref name="routeName"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified route with 
+        /// <see cref="RedirectToRouteResult.Permanent"/> set to true using the specified <paramref name="routeName"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
         /// <returns>The created <see cref="RedirectToRouteResult"/> for the response.</returns>
@@ -695,8 +698,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified route with <see cref="RedirectToRouteResult.Permanent"/> set to true
-        /// using the specified <paramref name="routeValues"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified route with 
+        /// <see cref="RedirectToRouteResult.Permanent"/> set to true using the specified <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="routeValues">The parameters for a route.</param>
         /// <returns>The created <see cref="RedirectToRouteResult"/> for the response.</returns>
@@ -707,8 +710,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified route with <see cref="RedirectToRouteResult.Permanent"/> set to true
-        /// using the specified <paramref name="routeName"/> and <paramref name="routeValues"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified route with <see cref="RedirectToRouteResult.Permanent"/>
+        /// set to true using the specified <paramref name="routeName"/> and <paramref name="routeValues"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
         /// <param name="routeValues">The parameters for a route.</param>
@@ -720,8 +723,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified route with <see cref="RedirectToRouteResult.Permanent"/> set to true
-        /// using the specified <paramref name="routeName"/> and <paramref name="fragment"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified route with 
+        /// <see cref="RedirectToRouteResult.Permanent"/> set to true using the specified <paramref name="routeName"/> and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
         /// <param name="fragment">The fragment to add to the URL.</param>
@@ -733,9 +736,8 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Redirects (HTTP 301) to the specified route with <see cref="RedirectToRouteResult.Permanent"/> set to true
-        /// using the specified <paramref name="routeName"/>, <paramref name="routeValues"/>,
-        /// and <paramref name="fragment"/>.
+        /// Redirects (<see cref="StatusCodes.Status301MovedPermanently"/>) to the specified route with <see cref="RedirectToRouteResult.Permanent"/>
+        /// set to true using the specified <paramref name="routeName"/>, <paramref name="routeValues"/>, and <paramref name="fragment"/>.
         /// </summary>
         /// <param name="routeName">The name of the route.</param>
         /// <param name="routeValues">The parameters for a route.</param>
@@ -754,7 +756,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns a file with the specified <paramref name="fileContents" /> as content (HTTP 200) and the
+        /// Returns a file with the specified <paramref name="fileContents" /> as content (<see cref="StatusCodes.Status200OK"/>) and the
         /// specified <paramref name="contentType" /> as the Content-Type.
         /// </summary>
         /// <param name="fileContents">The file contents.</param>
@@ -767,7 +769,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns a file with the specified <paramref name="fileContents" /> as content (HTTP 200), the
+        /// Returns a file with the specified <paramref name="fileContents" /> as content (<see cref="StatusCodes.Status200OK"/>), the
         /// specified <paramref name="contentType" /> as the Content-Type and the
         /// specified <paramref name="fileDownloadName" /> as the suggested file name.
         /// </summary>
@@ -782,7 +784,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns a file in the specified <paramref name="fileStream" /> (HTTP 200) with the
+        /// Returns a file in the specified <paramref name="fileStream" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type.
         /// </summary>
         /// <param name="fileStream">The <see cref="Stream"/> with the contents of the file.</param>
@@ -795,7 +797,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns a file in the specified <paramref name="fileStream" /> (HTTP 200) with the
+        /// Returns a file in the specified <paramref name="fileStream" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type and the
         /// specified <paramref name="fileDownloadName" /> as the suggested file name.
         /// </summary>
@@ -810,7 +812,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns the file specified by <paramref name="virtualPath" /> (HTTP 200) with the
+        /// Returns the file specified by <paramref name="virtualPath" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type.
         /// </summary>
         /// <param name="virtualPath">The virtual path of the file to be returned.</param>
@@ -823,7 +825,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns the file specified by <paramref name="virtualPath" /> (HTTP 200) with the
+        /// Returns the file specified by <paramref name="virtualPath" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type and the
         /// specified <paramref name="fileDownloadName" /> as the suggested file name.
         /// </summary>
@@ -838,7 +840,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns the file specified by <paramref name="physicalPath" /> (HTTP 200) with the
+        /// Returns the file specified by <paramref name="physicalPath" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type.
         /// </summary>
         /// <param name="physicalPath">The physical path of the file to be returned.</param>
@@ -851,7 +853,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Returns the file specified by <paramref name="physicalPath" /> (HTTP 200) with the
+        /// Returns the file specified by <paramref name="physicalPath" /> (<see cref="StatusCodes.Status200OK"/>) with the
         /// specified <paramref name="contentType" /> as the Content-Type and the
         /// specified <paramref name="fileDownloadName" /> as the suggested file name.
         /// </summary>
@@ -869,7 +871,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="UnauthorizedResult"/> that produces an Unauthorized (401) response.
+        /// Creates an <see cref="UnauthorizedResult"/> that produces an <see cref="StatusCodes.Status401Unauthorized"/> response.
         /// </summary>
         /// <returns>The created <see cref="UnauthorizedResult"/> for the response.</returns>
         [NonAction]
@@ -879,7 +881,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="NotFoundResult"/> that produces a Not Found (404) response.
+        /// Creates an <see cref="NotFoundResult"/> that produces a <see cref="StatusCodes.Status404NotFound"/> response.
         /// </summary>
         /// <returns>The created <see cref="NotFoundResult"/> for the response.</returns>
         [NonAction]
@@ -889,7 +891,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="NotFoundObjectResult"/> that produces a Not Found (404) response.
+        /// Creates an <see cref="NotFoundObjectResult"/> that produces a <see cref="StatusCodes.Status404NotFound"/> response.
         /// </summary>
         /// <returns>The created <see cref="NotFoundObjectResult"/> for the response.</returns>
         [NonAction]
@@ -899,7 +901,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="BadRequestResult"/> that produces a Bad Request (400) response.
+        /// Creates an <see cref="BadRequestResult"/> that produces a <see cref="StatusCodes.Status400BadRequest"/> response.
         /// </summary>
         /// <returns>The created <see cref="BadRequestResult"/> for the response.</returns>
         [NonAction]
@@ -909,7 +911,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="BadRequestObjectResult"/> that produces a Bad Request (400) response.
+        /// Creates an <see cref="BadRequestObjectResult"/> that produces a <see cref="StatusCodes.Status400BadRequest"/> response.
         /// </summary>
         /// <returns>The created <see cref="BadRequestObjectResult"/> for the response.</returns>
         [NonAction]
@@ -919,7 +921,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates an <see cref="BadRequestObjectResult"/> that produces a Bad Request (400) response.
+        /// Creates an <see cref="BadRequestObjectResult"/> that produces a <see cref="StatusCodes.Status400BadRequest"/> response.
         /// </summary>
         /// <returns>The created <see cref="BadRequestObjectResult"/> for the response.</returns>
         [NonAction]
@@ -934,7 +936,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="uri">The URI at which the content has been created.</param>
         /// <param name="value">The content value to format in the entity body.</param>
@@ -951,7 +953,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="uri">The URI at which the content has been created.</param>
         /// <param name="value">The content value to format in the entity body.</param>
@@ -968,7 +970,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="value">The content value to format in the entity body.</param>
@@ -980,7 +982,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
@@ -993,7 +995,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtActionResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="controllerName">The name of the controller to use for generating the URL.</param>
@@ -1011,7 +1013,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="routeName">The name of the route to use for generating the URL.</param>
         /// <param name="value">The content value to format in the entity body.</param>
@@ -1023,7 +1025,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
         /// <param name="value">The content value to format in the entity body.</param>
@@ -1035,7 +1037,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a Created (201) response.
+        /// Creates a <see cref="CreatedAtRouteResult"/> object that produces a <see cref="StatusCodes.Status201Created"/> response.
         /// </summary>
         /// <param name="routeName">The name of the route to use for generating the URL.</param>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
@@ -1048,7 +1050,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <returns>The created <see cref="AcceptedResult"/> for the response.</returns>
         [NonAction]
@@ -1058,7 +1060,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="value">The optional content value to format in the entity body; may be null.</param>
         /// <returns>The created <see cref="AcceptedResult"/> for the response.</returns>
@@ -1069,7 +1071,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="uri">The optional URI with the location at which the status of requested content can be monitored.
         /// May be null.</param>
@@ -1086,7 +1088,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="uri">The optional URI with the location at which the status of requested content can be monitored.
         /// May be null.</param>
@@ -1098,7 +1100,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="uri">The URI with the location at which the status of requested content can be monitored.</param>
         /// <param name="value">The optional content value to format in the entity body; may be null.</param>
@@ -1110,7 +1112,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="uri">The URI with the location at which the status of requested content can be monitored.</param>
         /// <param name="value">The optional content value to format in the entity body; may be null.</param>
@@ -1127,7 +1129,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <returns>The created <see cref="AcceptedAtActionResult"/> for the response.</returns>
@@ -1138,7 +1140,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="controllerName">The name of the controller to use for generating the URL.</param>
@@ -1150,7 +1152,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="value">The optional content value to format in the entity body; may be null.</param>
@@ -1162,7 +1164,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="controllerName">The name of the controller to use for generating the URL.</param>
@@ -1175,7 +1177,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
@@ -1188,7 +1190,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtActionResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="actionName">The name of the action to use for generating the URL.</param>
         /// <param name="controllerName">The name of the controller to use for generating the URL.</param>
@@ -1206,7 +1208,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
         /// <returns>The created <see cref="AcceptedAtRouteResult"/> for the response.</returns>
@@ -1217,7 +1219,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="routeName">The name of the route to use for generating the URL.</param>
         /// <returns>The created <see cref="AcceptedAtRouteResult"/> for the response.</returns>
@@ -1228,7 +1230,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="routeName">The name of the route to use for generating the URL.</param>
         ///<param name="routeValues">The route data to use for generating the URL.</param>
@@ -1240,7 +1242,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
         /// <param name="value">The optional content value to format in the entity body; may be null.</param>
@@ -1252,7 +1254,7 @@ namespace Microsoft.AspNetCore.Mvc
         }
 
         /// <summary>
-        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an Accepted (202) response.
+        /// Creates a <see cref="AcceptedAtRouteResult"/> object that produces an <see cref="StatusCodes.Status202Accepted"/> response.
         /// </summary>
         /// <param name="routeName">The name of the route to use for generating the URL.</param>
         /// <param name="routeValues">The route data to use for generating the URL.</param>
@@ -1306,7 +1308,7 @@ namespace Microsoft.AspNetCore.Mvc
             => new ChallengeResult(authenticationSchemes, properties);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (HTTP 403).
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>).
         /// </summary>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
         [NonAction]
@@ -1314,7 +1316,7 @@ namespace Microsoft.AspNetCore.Mvc
             => new ForbidResult();
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> (HTTP 403) with the specified authentication schemes.
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified authentication schemes.
         /// </summary>
         /// <param name="authenticationSchemes">The authentication schemes to challenge.</param>
         /// <returns>The created <see cref="ForbidResult"/> for the response.</returns>
@@ -1323,7 +1325,7 @@ namespace Microsoft.AspNetCore.Mvc
             => new ForbidResult(authenticationSchemes);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> with the specified <paramref name="properties" />.
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified <paramref name="properties" />.
         /// </summary>
         /// <param name="properties"><see cref="AuthenticationProperties"/> used to perform the authentication
         /// challenge.</param>
@@ -1333,8 +1335,8 @@ namespace Microsoft.AspNetCore.Mvc
             => new ForbidResult(properties);
 
         /// <summary>
-        /// Creates a <see cref="ForbidResult"/> with the specified specified authentication schemes and
-        /// <paramref name="properties" />.
+        /// Creates a <see cref="ForbidResult"/> (<see cref="StatusCodes.Status403Forbidden"/>) with the specified specified
+        /// authentication schemes and <paramref name="properties" />.
         /// </summary>
         /// <param name="properties"><see cref="AuthenticationProperties"/> used to perform the authentication
         /// challenge.</param>
