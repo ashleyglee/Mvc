@@ -112,6 +112,22 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
         }
 
         [Fact]
+        public async Task HandlerWithView()
+        {
+            // Arrange
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost/OnGetView?message=functionaltests");
+
+            // Act
+            var response = await Client.SendAsync(request);
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+            var content = await response.Content.ReadAsStringAsync();
+            Assert.Equal("The message: From OnGet", content.Trim());
+        }
+
+        [Fact]
         public async Task TempData_SetTempDataInPage_CanReadValue()
         {
             // Arrange 1
