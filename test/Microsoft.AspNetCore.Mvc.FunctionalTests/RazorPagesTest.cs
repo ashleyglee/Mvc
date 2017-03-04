@@ -112,7 +112,7 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
         }
 
         [Fact]
-        public async Task HandlerWithView()
+        public async Task ViewReturnsPage()
         {
             // Arrange
             var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost/OnGetView?message=functionaltests");
